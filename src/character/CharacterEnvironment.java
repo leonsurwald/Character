@@ -17,14 +17,14 @@ import java.awt.event.MouseEvent;
  */
 class CharacterEnvironment extends Environment {
 
-    Diglett myDiglett;
-    
+    private Diglett myDiglettBig, myDiglettSmall;
+
     public CharacterEnvironment() {
-    
-    myDiglett = new Diglett(200, 50, 200, 200);
-    
+
+        myDiglettBig = new Diglett(200, 50, 400, 400);
+        myDiglettSmall = new Diglett(0, 0, 100, 100);
+
     }
-    
 
     @Override
     public void initializeEnvironment() {
@@ -48,16 +48,22 @@ class CharacterEnvironment extends Environment {
 
     @Override
     public void environmentMouseClicked(MouseEvent e) {
-
+        if (myDiglettBig != null) {
+            myDiglettBig.setX(e.getX());
+            myDiglettBig.setY(e.getY());
+        }
     }
 
     @Override
     public void paintEnvironment(Graphics graphics) {
-       
-        
-        if (myDiglett != null){
-            myDiglett.draw(graphics);
+
+        if (myDiglettBig != null) {
+            myDiglettBig.draw(graphics);
+        }
+
+        if (myDiglettSmall != null) {
+            myDiglettSmall.draw(graphics);
         }
     }
-    
+
 }
