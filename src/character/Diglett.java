@@ -8,6 +8,7 @@ package character;
 import grid.Grid;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Point;
 
 /**
  *
@@ -19,19 +20,38 @@ public class Diglett {
 
         graphics.drawRect(x, y, width, height);
 
-        graphics.setColor(new Color(139,69,19, 255));
+        
+        graphics.setColor(new Color(139, 69, 19, 255));
 
-        graphics.fillRect(x + width * 20 / 100, y + height * 25 / 100, width * 60 / 100, height * 50 / 100);        //Body
-        graphics.fillOval(x + width * 20 / 100, y + height * 1 / 100 , width * 60 / 100, height * 50 / 100);      //Head
+        graphics.fillRect(x + width * 20 / 100, y + height * 25 / 100, width * 60 / 100, height * 55 / 100);        //Body
+        graphics.fillOval(x + width * 20 / 100, y + height * 1 / 100, width * 60 / 100, height * 50 / 100);      //Head
 
         graphics.setColor(Color.BLACK);
 
-//        graphics.drawOval(x, y, width, height);        //Nose
-        graphics.fillOval(x + width * 60 / 100, y + height * 15 / 100, width * 5 / 100, height / 8);        //Right Eye 
-        graphics.fillOval(x + width * 35 / 100, y + height * 15 / 100, width * 5 / 100, height / 8);        //Left Eye
-//        graphics.drawOval(x, y, width, height);        //Left Pupil 
-//        graphics.drawOval(x, y, width, height);        //Right Pupil
-//        graphics.drawOval(x, y, width, height);             
+        graphics.fillOval(x + width * 60 / 100, y + height * 15 / 100, width * 5 / 100, height * 12 /100);        //Right Eye 
+        graphics.fillOval(x + width * 35 / 100, y + height * 15 / 100, width * 5 / 100, height * 12 / 100);        //Left Eye
+        
+        
+        graphics.setColor(Color.WHITE);
+        
+        graphics.fillOval(x + width * 62 / 100, y + height * 17 / 100, width * (5/2) / 100, height * 3 / 100);        //Right Pupil 
+        graphics.fillOval(x + width * 37 / 100, y + height * 17 / 100, width * (5/2) / 100, height * 3 / 100);         //Left Pupil
+
+        graphics.setColor(Color.PINK);
+        
+        graphics.fillOval(x + width * 36 / 100, y + height * 35 / 100, width *  26 / 100, height * 10 / 100);           //Nose
+        
+        
+        graphics.setColor(Color.WHITE);
+        
+        graphics.fillOval(x + width * 36 / 100, y + height * 35 / 100, width *  26 / 100, height * 10 / 100);           //Nose
+
+        
+        
+        if (design) {
+            grid.paintComponent(graphics);
+        }
+
     }
 
     public Diglett(int x, int y, int height, int width) {                  //Constructor
@@ -41,28 +61,32 @@ public class Diglett {
         this.height = height;
         this.width = width;
 
+        grid = new Grid(ROWS, COLUMNS, width / ROWS, height / COLUMNS, new Point(x, y), Color.BLUE);
+        design = true;
+
     }
 
     private int x;
     private int y;
     private int height;
     private int width;
-    
-    
+
     private Grid grid;
     private static final int ROWS = 10;
     private static final int COLUMNS = 10;
-    
+
     private boolean design = false;
 
-    
     public void setX(int x) {
         this.x = x;
+        this.grid.getPosition().x = x;
     }
 
     public void setY(int y) {
         this.y = y;
+        this.grid.getPosition().y = y;
     }
+    
 
     /**
      * @return the design
