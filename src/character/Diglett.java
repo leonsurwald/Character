@@ -19,7 +19,7 @@ public class Diglett {
     public void draw(Graphics graphics) {
 
         graphics.drawRect(x, y, width, height);
-
+ 
         
         graphics.setColor(new Color(139, 69, 19, 255));
 
@@ -28,23 +28,23 @@ public class Diglett {
 
         graphics.setColor(Color.BLACK);
 
-        graphics.fillOval(x + width * 60 / 100, y + height * 15 / 100, width * 5 / 100, height * 12 /100);        //Right Eye 
-        graphics.fillOval(x + width * 35 / 100, y + height * 15 / 100, width * 5 / 100, height * 12 / 100);        //Left Eye
+        graphics.fillOval(x + width * 60 / 100, y + height * 15 / 100, width * (5) / 100, height * 14 /100);        //Right Eye 
+        graphics.fillOval(x + width * 35 / 100, y + height * 15 / 100, width * (5) / 100, height * 14 / 100);        //Left Eye
         
         
         graphics.setColor(Color.WHITE);
         
-        graphics.fillOval(x + width * 62 / 100, y + height * 17 / 100, width * (5/2) / 100, height * 3 / 100);        //Right Pupil 
-        graphics.fillOval(x + width * 37 / 100, y + height * 17 / 100, width * (5/2) / 100, height * 3 / 100);         //Left Pupil
+        graphics.fillOval(x + width * 61 / 100, y + height * 17 / 100, width * (5/2) / 100, height * 4 / 100);        //Right Pupil 
+        graphics.fillOval(x + width * 36 / 100, y + height * 17 / 100, width * (5/2) / 100, height * 4 / 100);         //Left Pupil
 
-        graphics.setColor(Color.PINK);
+        graphics.setColor(new Color(255, 105, 180, 255));
         
         graphics.fillOval(x + width * 36 / 100, y + height * 35 / 100, width *  26 / 100, height * 10 / 100);           //Nose
         
         
-        graphics.setColor(Color.WHITE);
+        graphics.setColor(new Color(255, 255, 255, 254));
         
-        graphics.fillOval(x + width * 36 / 100, y + height * 35 / 100, width *  26 / 100, height * 10 / 100);           //Nose
+        graphics.fillOval(x + width * 38 / 100, y + height * 35 / 100, width *  7 / 100, height * 7 / 100);           //Nose
 
         
         
