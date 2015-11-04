@@ -23,7 +23,7 @@ public class Diglett {
         
         graphics.setColor(new Color(139, 69, 19, 255));
 
-        graphics.fillRect(x + width * 20 / 100, y + height * 25 / 100, width * 60 / 100, height * 55 / 100);        //Body
+        graphics.fillRect(x + width * 20 / 100, y + height * 25 / 100, width * 60 / 100, height * 55 / 100);       //Body
         graphics.fillOval(x + width * 20 / 100, y + height * 1 / 100, width * 60 / 100, height * 50 / 100);      //Head
 
         graphics.setColor(Color.BLACK);
@@ -36,6 +36,11 @@ public class Diglett {
         
         graphics.fillOval(x + width * 61 / 100, y + height * 17 / 100, width * (5/2) / 100, height * 4 / 100);        //Right Pupil 
         graphics.fillOval(x + width * 36 / 100, y + height * 17 / 100, width * (5/2) / 100, height * 4 / 100);         //Left Pupil
+        
+        graphics.setColor(Color.BLACK);
+        
+        graphics.fillOval(x + width * 42 / 100, y + height * 41 / 100, width *  22 / 100, height * 8 / 100);
+        
 
         graphics.setColor(new Color(255, 105, 180, 255));
         
@@ -48,9 +53,9 @@ public class Diglett {
 
         
         
-        if (design) {
-            grid.paintComponent(graphics);
-        }
+//        if (design) {
+//            grid.paintComponent(graphics);
+//        }
 
     }
 
